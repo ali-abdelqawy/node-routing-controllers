@@ -1,5 +1,4 @@
 import {
-  Controller,
   Param,
   Body,
   Get,
@@ -7,13 +6,16 @@ import {
   Put,
   Delete,
   JsonController,
+  QueryParam,
 } from "routing-controllers";
 
 @JsonController("/users")
 export class UserController {
   @Get()
-  getAll() {
-    return "This action returns all users";
+  getAll(@QueryParam("limit", { required: true }) limit: number) {
+    if (limit > 20)
+      return "maximum number of user to be returned in a single request = 20";
+    return `This action returns ${limit} users`;
   }
 
   @Get("/:id")
