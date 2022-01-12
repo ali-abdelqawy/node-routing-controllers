@@ -8,6 +8,7 @@ import {
   JsonController,
   QueryParam,
 } from "routing-controllers";
+import { User } from "../models/User";
 
 @JsonController("/users")
 export class UserController {
@@ -24,7 +25,7 @@ export class UserController {
   }
 
   @Post("")
-  post(@Body() user: any) {
+  post(@Body() user: User) {
     return "Saving user...";
   }
 
