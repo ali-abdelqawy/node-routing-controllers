@@ -1,9 +1,9 @@
 import "reflect-metadata";
 import { createExpressServer } from "routing-controllers";
-import { UserController } from "./Controllers/UserController";
+import path from "path";
 
 const app = createExpressServer({
-  controllers: [UserController],
+  controllers: [path.join(__dirname + "/controllers/*.ts")],
 });
 
 app.listen(3000);
