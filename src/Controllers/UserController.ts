@@ -7,8 +7,9 @@ import {
   Delete,
   JsonController,
   QueryParam,
+  getMetadataArgsStorage,
 } from "routing-controllers";
-import { User } from "../models/User";
+import { routingControllersToSpec } from "routing-controllers-openapi";
 
 @JsonController("/users")
 export class UserController {
@@ -25,7 +26,7 @@ export class UserController {
   }
 
   @Post("")
-  post(@Body() user: User) {
+  post(@Body() user: any) {
     return "Saving user...";
   }
 
@@ -39,3 +40,6 @@ export class UserController {
     return "Removing user...";
   }
 }
+
+const storage = getMetadataArgsStorage();
+export const spec = routingControllersToSpec(storage);
