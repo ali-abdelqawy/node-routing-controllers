@@ -1,11 +1,9 @@
-import express from 'express';
-const app = express();
-const port = 3000;
+import "reflect-metadata";
+import { createExpressServer } from "routing-controllers";
+import { UserController } from "./Controllers/UserController";
 
-app.get('/', (req, res) => {
-  res.send('ali!');
+const app = createExpressServer({
+  controllers: [UserController],
 });
 
-app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
-});
+app.listen(3000);

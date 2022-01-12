@@ -1,15 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const app = (0, express_1.default)();
-const port = 3000;
-app.get('/', (req, res) => {
-    res.send('dasda!');
+const routing_controllers_1 = require("routing-controllers");
+const UserController_1 = require("./Controllers/UserController");
+const app = (0, routing_controllers_1.createExpressServer)({
+    controllers: [UserController_1.UserController],
 });
-app.listen(port, () => {
-    return console.log(`Express is listening at http://localhost:${port}`);
-});
+app.listen(3000);
 //# sourceMappingURL=app.js.map
