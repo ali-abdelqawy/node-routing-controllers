@@ -1,13 +1,13 @@
 import "reflect-metadata";
 import path from "path";
-import { generateAPIGuide } from "./utils";
+import { generateAPIDoc } from "./utils";
 
 import app from "./server";
 
-// generateAPIGuide();
+// generateAPIDoc();
 
 app.get("/", (_req, res) => {
-  // const filePath = path.join(process.cwd(), "src/public/api-guide.html");
+  // const filePath = path.join(process.cwd(), "src/public/api-doc.html");
   // res.sendFile(filePath);
   res.send("Hello, World!");
 });

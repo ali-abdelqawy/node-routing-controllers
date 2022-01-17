@@ -4,7 +4,7 @@ import { routingControllersToSpec } from "routing-controllers-openapi";
 import { config } from "../config";
 import { writeFile } from ".";
 
-export const generateAPIGuide = () => {
+export const generateAPIDoc = () => {
   const storage = getMetadataArgsStorage();
   const schemas = validationMetadatasToSchemas({
     refPointerPrefix: "#/components/schemas/",
