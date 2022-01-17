@@ -17,5 +17,5 @@ export class AddNewUser {
   @Length(64, 128)
   password: string;
 
-  userRole: UserRole;
+  role: UserRole;
 }

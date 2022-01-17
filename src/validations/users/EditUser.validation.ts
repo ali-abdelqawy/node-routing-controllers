@@ -23,5 +23,5 @@ export class EditUser {
   password: string;
 
   @IsOptional()
-  userRole: UserRole;
+  role: UserRole;
 }
